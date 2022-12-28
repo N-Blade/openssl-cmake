@@ -31,13 +31,6 @@ include(ExternalProject)
 find_package(Git REQUIRED)
 find_package(PythonInterp 3 REQUIRED)
 
-# # used to apply various patches to OpenSSL
-find_program(PATCH_PROGRAM patch)
-if (NOT PATCH_PROGRAM)
-    message(FATAL_ERROR "Cannot find patch utility. This is only required for Android cross-compilation but due to script complexity "
-                        "the requirement is always enforced")
-endif()
-
 # set variables
 ProcessorCount(NUM_JOBS)
 set(OS "UNIX")
